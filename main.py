@@ -21,7 +21,7 @@ for i in range(s.days+1):
     'inqStrDt': 조회날짜,
     'hid_enc_data':'', 
     'requestTarget': 'searchContentDiv'}
-    req = requests.post('https://www.kebhana.com/cms/rate/wpfxd458_05p_01.do',headers=data)
+    req = requests.post('https://www.kebhana.com/cms/rate/wpfxd458_05p_01.do',data=data)
     df1 = pd.read_html(req.text)[0]
     df1.set_index('통화코드',inplace=True)
     df1['조회날짜']=조회날짜
